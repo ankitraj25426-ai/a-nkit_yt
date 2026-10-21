@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Ankit Kumar - ANKIT.DEV</title>
+    <meta name="description" content="Explore Ankit Kumar's web development projects, website designs, coding journey, and upcoming projects.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .gallery-hero {
+            text-align: center;
+            padding: 65px 20px 45px;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .gallery-hero h1 span {
+            color: #a78bfa;
+        }
+
+        .gallery-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        .gallery-section {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-heading {
+            margin: 25px 0;
+        }
+
+        .gallery-heading h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-heading p {
+            opacity: 0.75;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 55px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.035);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-7px);
+            border-color: #a78bfa;
+        }
+
+        .gallery-preview {
+            height: 200px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-purple {
+            background: linear-gradient(135deg, #25104b, #6d28d9, #c084fc);
+        }
+
+        .preview-blue {
+            background: linear-gradient(135deg, #082f49, #0369a1, #67e8f9);
+        }
+
+        .preview-orange {
+            background: linear-gradient(135deg, #431407, #c2410c, #fdba74);
+        }
+
+        .preview-green {
+            background: linear-gradient(135deg, #052e16, #15803d, #86efac);
+        }
+
+        .preview-dark {
+            background: linear-gradient(135deg, #09090b, #27272a, #71717a);
+        }
+
+        .preview-pink {
+            background: linear-gradient(135deg, #500724, #be185d, #f9a8d4);
+        }
+
+        .preview-content {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .preview-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .preview-content h3 {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+        }
+
+        .preview-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .gallery-info {
+            padding: 22px;
+        }
+
+        .gallery-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .gallery-info p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.8;
+            margin-bottom: 18px;
+        }
+
+        .gallery-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .gallery-tags span {
+            font-size: 0.78rem;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: rgba(167, 139, 250, 0.13);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+        }
+
+        .gallery-link {
+            color: #c4b5fd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .gallery-link:hover {
+            text-decoration: underline;
+        }
+
+        .coming-soon {
+            border: 1px dashed rgba(167, 139, 250, 0.45);
+            border-radius: 18px;
+            padding: 35px 20px;
+            text-align: center;
+            margin-bottom: 55px;
+            background: rgba(167, 139, 250, 0.04);
+        }
+
+        .coming-soon .icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .gallery-cta {
+            text-align: center;
+            padding: 45px 20px 65px;
+        }
+
+        .gallery-cta p {
+            max-width: 600px;
+            margin: 12px auto 22px;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-hero {
+                padding-top: 45px;
+            }
+
+            .gallery-preview {
+                height: 175px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">ANKIT<span>.DEV</span></a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle"
+                            aria-label="Toggle theme">☀️</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="gallery-hero">
+            <h1>My Creative <span>Gallery</span></h1>
+
+            <p>
+                Welcome to my digital workspace! Explore my website projects,
+                design concepts, and coding journey as I grow into a better
+                web developer.
+            </p>
+        </section>
+
+        <!-- Project Gallery -->
+        <section class="gallery-section">
+            <div class="gallery-heading">
+                <h2>Website Projects</h2>
+                <p>A collection of websites and applications I have worked on.</p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- Project 1 -->
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-purple">
+                        <div class="preview-content">
+                            <div class="preview-icon">🖨️</div>
+                            <h3>Anuradha Printing</h3>
+                            <p>Printing Website</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-info">
+                        <h3>Anuradha Printing Website</h3>
+                        <p>
+                            A website project created for a printing business
+                            to showcase its services and online presence.
+                        </p>
+
+                        <div class="gallery-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Web Design</span>
+                        </div>
+
+                        <a class="gallery-link"
+                           href="https://anuradhaprinting.in/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit Website ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-blue">
+                        <div class="preview-content">
+                            <div class="preview-icon">📚</div>
+                            <h3>JP Mishra Coaching</h3>
+                            <p>Education Website</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-info">
+                        <h3>JP Mishra Coaching Centre</h3>
+                        <p>
+                            A coaching-centre website demo designed to present
+                            educational information in a simple layout.
+                        </p>
+
+                        <div class="gallery-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Education</span>
+                        </div>
+
+                        <a class="gallery-link"
+                           href="https://jp-mishra-coaching-centre-89d6.vercel.app/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Demo ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-green">
+                        <div class="preview-content">
+                            <div class="preview-icon">🎓</div>
+                            <h3>AKU BCA App</h3>
+                            <p>Student Learning Project</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-info">
+                        <h3>AKU BCA Learning App</h3>
+                        <p>
+                            A student-focused project concept for organizing
+                            BCA subjects, syllabus, notes, and study material.
+                        </p>
+
+                        <div class="gallery-tags">
+                            <span>BCA</span>
+                            <span>Education</span>
+                            <span>Web App</span>
+                        </div>
+
+                        <a class="gallery-link"
+                           href="https://file-manager-update-1.preview.emergentagent.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Open App Preview ↗
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Creative Concepts -->
+        <section class="gallery-section">
+            <div class="gallery-heading">
+                <h2>Design & Learning Journey</h2>
+                <p>Ideas and areas I am exploring while improving my skills.</p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-orange">
+                        <div class="preview-content">
+                            <div class="preview-icon">💻</div>
+                            <h3>Frontend Development</h3>
+                            <p>Building for the web</p>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Frontend Practice</h3>
+                        <p>
+                            Practising responsive layouts, page structure,
+                            CSS styling, and interactive website elements.
+                        </p>
+                        <div class="gallery-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-dark">
+                        <div class="preview-content">
+                            <div class="preview-icon">⚙️</div>
+                            <h3>Programming Practice</h3>
+                            <p>Learn, build, improve</p>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Coding Journey</h3>
+                        <p>
+                            Strengthening programming fundamentals through
+                            regular practice and small development tasks.
+                        </p>
+                        <div class="gallery-tags">
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>Problem Solving</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-preview preview-pink">
+                        <div class="preview-content">
+                            <div class="preview-icon">🚀</div>
+                            <h3>Future Projects</h3>
+                            <p>More ideas coming soon</p>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>What's Next?</h3>
+                        <p>
+                            Exploring new ideas and building projects that
+                            help me learn real-world development skills.
+                        </p>
+                        <div class="gallery-tags">
+                            <span>New Ideas</span>
+                            <span>Learning</span>
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Coming Soon -->
+        <section class="gallery-section">
+            <div class="coming-soon">
+                <div class="icon">✨</div>
+                <h2>More Projects Coming Soon!</h2>
+                <p>
+                    I am continuously learning and building new things.
+                    This gallery will grow as I complete more projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="gallery-cta">
+            <h2>Have a Project Idea?</h2>
+            <p>
+                Need a website for your business, coaching centre, or personal
+                brand? Let's connect and discuss your idea.
+            </p>
+            <a href="contact.html" class="btn btn-primary">
+                Contact Me
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © <span id="year"></span> Ankit Kumar | ANKIT.DEV
+            </p>
+            <p>Designed with ❤️ and built while learning.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

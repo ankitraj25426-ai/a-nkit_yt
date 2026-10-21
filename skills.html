@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Ankit Kumar's technical skills in HTML, CSS, JavaScript, Python, Java and web development.">
+  <title>My Skills | ANKIT.DEV</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .skills-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-light);
+    }
+
+    .skill-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .skill-icon {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(168, 85, 247, 0.12);
+      font-size: 1.65rem;
+    }
+
+    .skill-top h3 {
+      font-size: 1.05rem;
+    }
+
+    .skill-top p {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .skill-description {
+      min-height: 52px;
+      margin-bottom: 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .skill-status {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--primary-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 7px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--surface-hover);
+    }
+
+    .skill-fill {
+      height: 100%;
+      width: var(--level);
+      border-radius: inherit;
+      background: linear-gradient(90deg, #7c3aed, #c084fc);
+    }
+
+    .learning-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .learning-card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .learning-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .learning-card p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .learning-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .learning-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+
+    .learning-list li span {
+      color: var(--primary-light);
+    }
+
+    .skill-note {
+      margin-top: 25px;
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 850px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid,
+      .learning-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-description {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">ANKIT<span>.DEV</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >☰</button>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch theme"
+      >🌙</button>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page Heading -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">What I can work with</span>
+        <h1>My Technical <span class="gradient-text">Skills</span></h1>
+        <p class="skills-intro">
+          I am building my development skills through coding practice,
+          projects, and continuous learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">Technical toolkit</span>
+          <h2>Technologies I'm <span class="gradient-text">Learning</span></h2>
+          <p>
+            My current toolkit and the areas I am working to improve.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🌐</div>
+              <div>
+                <h3>HTML5</h3>
+                <p>Web structure</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Creating structured web pages using semantic HTML elements.
+            </p>
+            <span class="skill-status">Learning and practising</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 70%"></div>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🎨</div>
+              <div>
+                <h3>CSS3</h3>
+                <p>Design and layout</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Styling pages with layouts, responsive design, and animations.
+            </p>
+            <span class="skill-status">Learning and practising</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 55%"></div>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">⚡</div>
+              <div>
+                <h3>JavaScript</h3>
+                <p>Web interactivity</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Learning variables, functions, DOM manipulation, and events.
+            </p>
+            <span class="skill-status">Currently learning</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 30%"></div>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🐍</div>
+              <div>
+                <h3>Python</h3>
+                <p>Programming basics</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Practising programming fundamentals and problem-solving.
+            </p>
+            <span class="skill-status">Basic knowledge</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 35%"></div>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">☕</div>
+              <div>
+                <h3>Java</h3>
+                <p>Programming fundamentals</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Building an understanding of programming and object-oriented concepts.
+            </p>
+            <span class="skill-status">Learning</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 25%"></div>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🗄️</div>
+              <div>
+                <h3>DBMS</h3>
+                <p>Database concepts</p>
+              </div>
+            </div>
+            <p class="skill-description">
+              Studying database concepts, data organisation, and SQL fundamentals.
+            </p>
+            <span class="skill-status">Building fundamentals</span>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--level: 25%"></div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="skill-note">
+          Progress indicators are approximate self-assessments, not formal test scores.
+          Update them as your skills improve.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tools and Learning -->
+    <section>
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">My workflow</span>
+          <h2>Tools & <span class="gradient-text">Learning Goals</span></h2>
+        </div>
+
+        <div class="learning-panel">
+
+          <article class="learning-card">
+            <h3>🛠️ Tools I Use</h3>
+            <p>
+              Tools that help me write code, practise, and publish projects.
+            </p>
+
+            <div class="tag-list">
+              <span>VS Code</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>Vercel</span>
+              <span>Netlify</span>
+              <span>Chrome DevTools</span>
+            </div>
+          </article>
+
+          <article class="learning-card">
+            <h3>🎯 My Next Goals</h3>
+            <ul class="learning-list">
+              <li><span>✓</span> Improve HTML and responsive CSS.</li>
+              <li><span>✓</span> Strengthen JavaScript fundamentals.</li>
+              <li><span>✓</span> Build practical, useful web projects.</li>
+              <li><span>✓</span> Learn Git and collaborative workflows.</li>
+              <li><span>✓</span> Prepare for web development internships.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-card">
+          <span class="section-label">Let's build something</span>
+          <h2>Skills grow through <span class="gradient-text">practice.</span></h2>
+          <p>
+            Take a look at the projects I have worked on, or contact me
+            about a suitable learning or internship opportunity.
+          </p>
+
+          <div class="hero-buttons" style="justify-content: center;">
+            <a href="projects.html" class="btn btn-primary">
+              View Projects →
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <a href="index.html" class="logo">ANKIT<span>.DEV</span></a>
+
+      <p>© <span id="year"></span> Ankit Kumar. Built with passion.</p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
